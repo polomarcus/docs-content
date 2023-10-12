@@ -29,9 +29,19 @@ This page shows you how to configure alerts for Scaleway resources that are not 
 5. Click **Alert rules** and **+ Create alert rule**.
 6. Enter a name for your alert.
 7. Select **Mimir or Loki alert** and the data source you want to configure alerts for. For the sake of this documentation we are choosing the **Scaleway Metrics** datasource.
-8. In the **Metrics browser** drop-down, select the metric you want to configure an alert for. Once you have selected your preferred metric, the labels that apply to it, display.
-9. Select labels to target your desired resources.
+8. In the **Metrics browser** drop-down, select the metric you want to configure an alert for. For the sake of this documentation, we are choosing the `observability_cockpit_stored_samples` metric. Once you have selected your preferred metric, the labels that apply to it, display.
+9. Select labels to target your desired resources and fine-tune your alert.
 10. Select one or more values fo your labels.
-11. Click **Use query** to validate.
-12. Select the amount of time the alert has to be firing for, to be alerted.
-13. Enter a name for your alert in the **namespace** field.
+11. Click **Use query** to generate your alert based on the previous information you have selected.
+12. In the **Alert evaluation behavior** field, configure the amount of time you want the alert to be firing for.
+    <Message type="note">
+     For example, if you configure `2 minutes`, your contact point will only be alerted after the alert fires for 2 minutes without interruption.
+    </Message>
+13. Enter a name for your alert in the **namespace** field and click **Enter**.
+14. Enter a name for your alert's group in the **Group** field and click **Enter**.
+15. Click **Save** at the top right corner of your screen to save your alert.
+
+<Message type="important">
+  You can configure up to a maximum of 10 alerts for your resources.
+</Message>
+
